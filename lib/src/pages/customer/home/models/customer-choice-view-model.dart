@@ -1,8 +1,9 @@
 class CustomerChoiceViewModel{
-  final String title;
+  final String title, id, productId;
   final String? image, description;
   final List<String> colors;
-  final int price, count, selectedCount, id, userId, productId;
+  final int price, count, selectedCount;
+  final String?userId;
 
   CustomerChoiceViewModel(
       this.image,

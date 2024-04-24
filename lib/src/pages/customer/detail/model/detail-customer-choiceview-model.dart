@@ -1,5 +1,5 @@
 class DetailCustomerChoiceViewModel{
-  final String tittle;
+  final String title;
   final String? image, description, userId;
   final List<String> colors;
   final int price, count, selectedCount;
@@ -12,7 +12,7 @@ class DetailCustomerChoiceViewModel{
         required this.id,
         required this.userId,
         required this.productId,
-        required this.tittle,
+        required this.title,
         required this.price,
         required this.count,
         required this.selectedCount,
@@ -24,7 +24,7 @@ class DetailCustomerChoiceViewModel{
       json['description'],
       json['colors'].cast<String>(),
       id: json['id'],
-      tittle: json['tittle'],
+      title: json['tittle'],
       price: json['price'],
       count: json['count'],
       userId: json['userId'],

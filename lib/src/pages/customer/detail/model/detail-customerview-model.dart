@@ -1,5 +1,5 @@
 class DetailCustomerViewModel {
-  final String tittle;
+  final String title;
   final String? image, description;
   final List<dynamic> colors;
   final int price, count;
@@ -11,7 +11,7 @@ class DetailCustomerViewModel {
       this.description,
       this.colors, {
         required this.id,
-        required this.tittle,
+        required this.title,
         required this.price,
         required this.count,
         required this.isActive,
@@ -23,7 +23,7 @@ class DetailCustomerViewModel {
       json['description'],
       json['colors'].cast<String>(),
       id: json['id'],
-      tittle: json['tittle'],
+      title: json['tittle'],
       price: json['price'],
       count: json['count'],
       isActive: json['isActive'],

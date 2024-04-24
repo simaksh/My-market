@@ -68,14 +68,14 @@ class SellerHomePage extends GetView<SellerHomePageController> {
                     child: ElevatedButton(
                       onPressed: () => controller.getProducts(
                           searchText: controller.searchTextController.text),
-                      child: const Text('retry'),
+                      child: const Text('Retry'),
                     ),
                   );
                 } else {
                   return controller.products.isEmpty
                       ? const Text(
-                          'list is empty',
-                          overflow: TextOverflow.ellipsis,
+                          'Not fount List Product',
+                    style: TextStyle(color: Colors.greenAccent),
                         )
                       : Expanded(
                           child: ListView.builder(
@@ -133,7 +133,32 @@ class SellerHomePage extends GetView<SellerHomePageController> {
             const SizedBox(
               height: 10,
             ),
-            _filter(context),
+      IconButton(
+          onPressed: () => showDialog(
+              context: context,
+              builder: (context) => Obx(() {
+                return AlertDialog(
+                  backgroundColor: Colors.greenAccent.shade100,
+                  alignment: AlignmentDirectional.topCenter,
+                  shadowColor: Colors.greenAccent,
+                  title: const Text('Filter of color and price'),
+                  content: RangeFilter(
+                    values: controller.rangeSliderValues.value,
+                    min: controller.minPrice.value.toDouble(),
+                    max: controller.maxPrice.value.toDouble(),
+                    filterColorIndex: controller.filterColorIndex.value,
+                    colors: controller.filterColorsList.toList(),
+                    onChange: controller.rangePrice,
+                    onColorTap: controller.onFilterColorTap,
+                    onFilterTap: controller.filterButton,
+                    onRemoveFilterTap: controller.removeFilterButton,
+                  ),
+                );
+              })),
+          icon: const Icon(
+            Icons.filter_list_sharp,
+            color: Colors.greenAccent,
+          )) ,
             ElevatedButton(
                 onPressed: controller.logOutButton,
                 child: const Text(
@@ -144,32 +169,4 @@ class SellerHomePage extends GetView<SellerHomePageController> {
         ),
       );
 
-  Widget _filter(BuildContext context) {
-    return IconButton(
-        onPressed: () => showDialog(
-            context: context,
-            builder: (context) => Obx(() {
-                  return AlertDialog(
-                    backgroundColor: Colors.greenAccent.shade100,
-                    alignment: AlignmentDirectional.topCenter,
-                    shadowColor: Colors.greenAccent,
-                    title: const Text('filter of color and price'),
-                    content: RangeFilter(
-                      values: controller.rangeSliderValues.value,
-                      min: controller.minPrice.value.toDouble(),
-                      max: controller.maxPrice.value.toDouble(),
-                      filterColorIndex: controller.filterColorIndex.value,
-                      colors: controller.filterColorsList.toList(),
-                      onChange: controller.rangePrice,
-                      onColorTap: controller.onFilterColorTap,
-                      onFilterTap: controller.filterButton,
-                      onRemoveFilterTap: controller.removeFilterButton,
-                    ),
-                  );
-                })),
-        icon: const Icon(
-          Icons.filter_list_sharp,
-          color: Colors.greenAccent,
-        ));
-  }
 }

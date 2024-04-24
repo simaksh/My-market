@@ -2,7 +2,8 @@ class CustomerProductViewModel {
   final String title;
   final String? image, description;
   final List<String> colors;
-  final int price, count, id;
+  final int price, count;
+  final String id;
   final bool isActive;
 
   CustomerProductViewModel(

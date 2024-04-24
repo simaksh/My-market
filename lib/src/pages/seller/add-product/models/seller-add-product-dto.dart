@@ -1,5 +1,5 @@
 class SellerAddProductDto {
-  final String tittle;
+  final String title;
   final String ?sellerId;
   final String? description , image;
   final int count, price;
@@ -10,7 +10,7 @@ class SellerAddProductDto {
       this.description,
       this.image,
       this.colors, {
-        required this.tittle,
+        required this.title,
         required this.count,
         required this.price,
         required this.sellerId,
@@ -18,7 +18,7 @@ class SellerAddProductDto {
 
   Map<String, dynamic> toJson() {
     return {
-      'tittle': tittle,
+      'tittle': title,
       'description': description,
       'count': count,
       'price': price,

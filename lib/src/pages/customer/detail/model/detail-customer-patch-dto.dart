@@ -1,5 +1,5 @@
 class DetailCustomerPathDto{
-  final String tittle;
+  final String title;
   final String? image, description,userId;
   final List<String> colors;
   final int price, count, selectedCount;
@@ -12,7 +12,7 @@ class DetailCustomerPathDto{
         required this.id,
         required this.userId,
         required this.productId,
-        required this.tittle,
+        required this.title,
         required this.price,
         required this.count,
         required this.selectedCount,
@@ -23,7 +23,7 @@ class DetailCustomerPathDto{
       'id': id,
       'userId': userId,
       'productId': productId,
-      'tittle': tittle,
+      'tittle': title,
       'description': description,
       'count': count,
       'price': price,

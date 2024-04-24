@@ -81,7 +81,7 @@ class ShoppingCartPageView extends GetView<ShoppingCartPageController> {
                   child: controller.isPaymentLoading.value
                       ? Transform.scale(
                     scale: 0.75,
-                    child: const CircularProgressIndicator(),
+                    child: const LinearProgressIndicator(),
 
                   )
                       : const Text('Payment',style: TextStyle(color: Colors.black),),

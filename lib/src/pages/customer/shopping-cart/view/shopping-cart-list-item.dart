@@ -29,7 +29,7 @@ class ShoppingCartListItem
                               children: [
                                 Expanded(
                                     child: Text(
-                                      product.tittle,
+                                      product.title,
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                       ),

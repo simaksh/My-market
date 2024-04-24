@@ -1,5 +1,5 @@
 class SellerHomeDto{
-  final String tittle;
+  final String title;
   final String? image, description;
   final List<String> colors;
   final int price, count;
@@ -12,7 +12,7 @@ class SellerHomeDto{
       this.description,
       this.colors, {
         required this.id,
-        required this.tittle,
+        required this.title,
         required this.price,
         required this.sellerId,
         required this.count,
@@ -25,7 +25,7 @@ class SellerHomeDto{
       'image' : image ,
       'description' : description ,
       'colors' : colors ,
-      'tittle' : tittle ,
+      'tittle' : title ,
       'price' : price ,
       'sellerId' : sellerId ,
       'count' : count ,

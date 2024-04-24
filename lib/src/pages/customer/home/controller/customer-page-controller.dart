@@ -12,6 +12,7 @@ class CustomerHomePageController extends GetxController {
   final CustomerRepository _repository = CustomerRepository();
   final SharedPreferences _preferences = Get.find<SharedPreferences>();
   RxList<CustomerProductViewModel> products = RxList();
+  final List<CustomerProductViewModel>activeProducts=[];
   RxBool isGetProductsLoading = false.obs;
   RxBool isGetProductsRetry = false.obs;
   Rx<RangeValues> rangeSliderValues = const RangeValues(0, 0).obs;
@@ -37,27 +38,28 @@ class CustomerHomePageController extends GetxController {
 
 
   Future<void> getProducts({required String searchText}) async {
+    isGetProductsRetry.value = false;
     isGetProductsLoading.value = true;
     final result = await _repository.getProducts(
+
       minPrice: minFilter,
       maxPrice: maxFilter,
       search: searchText,
       color: filterColor,
     );
     isGetProductsLoading.value = false;
-    isGetProductsRetry.value = false;
     result.fold((left) {
       isGetProductsRetry.value = true;
       Get.showSnackbar(GetSnackBar(
+        backgroundColor: Colors.red,
         message: '${'error'} : $left',
         duration: const Duration(seconds: 2),
       ));
     }, (right) {
       products.clear();
-      products.addAll(right);
+      activeProducts.addAll( right.where((product) => product.isActive));
     });
   }
-
   Future<void> filter() async {
     final result = await _repository.getProductsBySortPrice();
     result.fold((left) {

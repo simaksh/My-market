@@ -62,7 +62,7 @@ class DetailCustomerPageController extends GetxController {
           isExistInSelectedProducts = true;
           id.value = product.id ;
           image.value = product.image ?? '';
-          tittle.value = product.tittle;
+          tittle.value = product.title;
           description.value = product.description ?? '';
           price.value = product.price;
           count.value = product.count;
@@ -86,7 +86,7 @@ class DetailCustomerPageController extends GetxController {
             },
                 (right) {
               image.value = right.image ?? '';
-              tittle.value = right.tittle;
+              tittle.value = right.title;
               description.value = right.description ?? '';
               price.value = right.price;
               count.value = right.count;
@@ -116,7 +116,7 @@ class DetailCustomerPageController extends GetxController {
         id:id.value ,
         userId: UserType.userId,
         productId: productId,
-        tittle: tittle.value,
+        title: tittle.value,
         price: price.value,
         count: count.value,
         selectedCount: selectedCount.value,
@@ -141,7 +141,7 @@ class DetailCustomerPageController extends GetxController {
         colors,
         userId: UserType.userId,
         productId: productId,
-        tittle: tittle.value,
+        title: tittle.value,
         price: price.value,
         count: count.value,
         selectedCount: selectedCount.value,

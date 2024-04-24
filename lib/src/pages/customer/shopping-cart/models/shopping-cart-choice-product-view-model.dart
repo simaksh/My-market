@@ -1,5 +1,5 @@
 class SoppingCartChoiceProductViewModel {
-  final String tittle, id, productId;
+  final String title, id, productId;
   final String? image, description, userId;
   final List<dynamic> colors;
   final int price, count, selectedCount;
@@ -11,7 +11,7 @@ class SoppingCartChoiceProductViewModel {
     required this.id,
     required this.userId,
     required this.productId,
-    required this.tittle,
+    required this.title,
     required this.price,
     required this.count,
     required this.selectedCount,
@@ -26,7 +26,7 @@ class SoppingCartChoiceProductViewModel {
       id: json['id'],
       userId: json['userId'],
       productId: json['productId'],
-      tittle: json['tittle'],
+      title: json['tittle'],
       price: json['price'],
       count: json['count'],
       selectedCount: json['selectedCount'],

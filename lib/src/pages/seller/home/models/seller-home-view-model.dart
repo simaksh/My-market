@@ -1,6 +1,6 @@
 class SellerHomeViewModel {
-  final String tittle;
-  final String description;
+  final String title;
+  final String ?description;
   final String? image;
   final List<String> colors;
   final int price, count;
@@ -12,7 +12,7 @@ class SellerHomeViewModel {
       this.description,
       this.colors, {
         required this.id,
-        required this.tittle,
+        required this.title,
         required this.price,
         required this.count,
         required this.isActive,
@@ -24,7 +24,7 @@ class SellerHomeViewModel {
       json['description'],
       json['colors'].cast<String>(),
       id: json['id'],
-      tittle: json['tittle'],
+      title: json['tittle'],
       price: json['price'],
       count: json['count'],
       isActive: json['isActive'],

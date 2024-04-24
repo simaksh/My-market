@@ -1,5 +1,5 @@
 class ShoppingCartChoiceProductDto{
-  final String tittle,id, productId;
+  final String title,id, productId;
   final String? image, description,userId;
   final List<dynamic> colors;
   final int price, count, selectedCount;
@@ -10,7 +10,7 @@ class ShoppingCartChoiceProductDto{
         required this.id,
         required this.userId,
         required this.productId,
-        required this.tittle,
+        required this.title,
         required this.price,
         required this.count,
         required this.selectedCount,
@@ -21,7 +21,7 @@ class ShoppingCartChoiceProductDto{
       'id': id,
       'userId': userId,
       'productId': productId,
-      'tittle': tittle,
+      'tittle': title,
       'description': description,
       'count': count,
       'price': price,

@@ -1,7 +1,7 @@
 
 
 class ShoppingCartDto{
-  final String tittle;
+  final String title;
   final String? image, description;
   final List<String> colors;
   final int price, count;
@@ -13,7 +13,7 @@ class ShoppingCartDto{
       this.description,
       this.colors, {
         required this.id,
-        required this.tittle,
+        required this.title,
         required this.price,
         required this.count,
       }) : isActive = true ;
@@ -21,7 +21,7 @@ class ShoppingCartDto{
   Map<String , dynamic> toJson(){
     return{
       'id': id,
-      'tittle': tittle,
+      'tittle': title,
       'description': description,
       'count': count,
       'price': price,

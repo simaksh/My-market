@@ -108,7 +108,7 @@ class SellerHomePageController extends GetxController {
       product.description,
       product.colors,
       id: product.id,
-      tittle: product.tittle,
+      title: product.title,
       price: product.price,
       sellerId: UserType.userId,
       count: product.count,

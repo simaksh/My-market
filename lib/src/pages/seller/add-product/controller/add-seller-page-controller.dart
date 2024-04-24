@@ -79,7 +79,7 @@ class AddSellerPageController extends GetxController {
               descriptionTextController.text,
               imageToString.value,
               colors,
-              tittle: tittleTextController.text,
+              title: tittleTextController.text,
               count: int.parse(countTextController.text.trim()),
               price: int.parse(priceTextController.text.trim()),
               sellerId: UserType.userId,

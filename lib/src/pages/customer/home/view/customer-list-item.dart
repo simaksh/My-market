@@ -17,7 +17,7 @@ class CustomerHomeListItem extends GetView<CustomerHomePageController> {
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.only(bottom: 20),
     child: InkWell(
-      onTap: () => controller.productButton(product.id),
+      onTap: () => controller.productButton(product.id as int),
       child: Card(
         child: Center(
           child: Padding(

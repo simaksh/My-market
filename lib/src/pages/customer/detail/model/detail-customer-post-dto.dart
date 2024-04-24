@@ -1,5 +1,5 @@
 class DetailCustomerPostDto{
-  final String tittle,  productId;
+  final String title,  productId;
   final String? image, description, userId;
   final List<String> colors;
   final int price, count, selectedCount;
@@ -9,7 +9,7 @@ class DetailCustomerPostDto{
       this.colors, {
         required this.userId,
         required this.productId,
-        required this.tittle,
+        required this.title,
         required this.price,
         required this.count,
         required this.selectedCount,
@@ -19,7 +19,7 @@ class DetailCustomerPostDto{
     return {
       'userId': userId,
       'productId': productId,
-      'tittle': tittle,
+      'tittle': title,
       'description': description,
       'count': count,
       'price': price,

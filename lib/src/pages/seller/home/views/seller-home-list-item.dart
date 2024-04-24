@@ -59,7 +59,7 @@ class SellerHomeListItem extends GetView<SellerHomePageController> {
                     'title:',
                     style: TextStyle(color: Colors.greenAccent),
                   ),
-                  Expanded(child: Text(product.tittle)),
+                  Expanded(child: Text(product.title)),
                   IconButton(
                     onPressed: () => controller.edit(product.id),
                     icon: const Icon(
@@ -80,7 +80,7 @@ class SellerHomeListItem extends GetView<SellerHomePageController> {
                     'description  :',
                     style: TextStyle(color: Colors.greenAccent),
                   ),
-                  Expanded(child: Text(product.description)),
+                  Expanded(child: Text(product.description!)),
                 ],
               ),
             ),

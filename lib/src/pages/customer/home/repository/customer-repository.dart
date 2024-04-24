@@ -63,23 +63,6 @@ class CustomerRepository {
       return Left(error.toString());
     }
   }
-  Future<Either<String, List<dynamic>>> getProduct(
-      {required String productId}) async {
-    try {
-      final url = Uri.http(RepositoryUrls.webBaseUrl, RepositoryUrls.getUser, {
-        'productId': productId
-      });
-
-      final response = await http.get(url);
-      if (response.statusCode >= 200 && response.statusCode < 400) {
-        return Right(jsonDecode(response.body));
-      } else {
-        return Left(response.statusCode.toString());
-      }
-    } catch (error) {
-      return Left(error.toString());
-    }
-  }
 
   Future<Either<String, List<CustomerChoiceViewModel>>>
   getSelectedProducts({required String? userId}) async {
